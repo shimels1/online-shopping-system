@@ -1,0 +1,19 @@
+  <div class="top">
+
+    <div class="contener" *ngIf="item.length > 0">
+
+        <h2>Here is our items shop now </h2>
+        <div class="item-contener">
+          <a *ngFor="let i of item"  >
+            <app-item-card [item]="i" ></app-item-card><app-item-card [item]="i" >
+
+            </app-item-card>
+           </a>
+        </div>
+
+
+
+
+    </div>
+  </div>
+

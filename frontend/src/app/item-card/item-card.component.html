@@ -1,0 +1,52 @@
+
+<div class="card" style="margin:15px 3px">
+
+<div fxLayout="column" [class.mat-elevation-z0]="true" class="video-card" fxLayoutGap="5px">
+
+  <div class="title-text-div" fxLayout="column"
+  [routerLink]="['item/detail/']" [queryParams]="{id:item.iditem}">
+  <!-- <img class="image" src="assets/aboutus.png"  > -->
+
+  <img class="image" [src]="'assets/'+item.imageURL"  >
+
+
+      <span class="title-text"  matTooltipClass="tooltip">
+{{item.title}}
+  </span>
+      <span class="date-and-view-text">
+
+          <span>
+              {{item.discription}}
+              </span> &nbsp;
+              <br><br>
+          <span>
+              {{item.date}}
+              </span> &nbsp;
+
+      </span>
+  </div>
+      <div >
+        <a  mat-button
+         [style.display]="(!isItemSelected && authService.getRole()==='customer') ? 'block' : 'none'"
+        (click)="addToCart()"
+        style="font-size: 14px;background:#1a8a29;color:white;padding:2px 15px;"   > ADD TO CART  </a>
+
+        <div
+        [style.display]="(isItemSelected && authService.getRole()==='customer') ? 'block' : 'none'"
+         >
+<div class="add-to-cart-button">
+          <button  (click)="dicreasCart()" mat-button
+          style="font-size: 14px;background:#1a8a29;color:white;padding:2px 15px;margin: 0 0 "   > - </button>
+
+          <button mat-button
+          style="font-size: 16px;background:#d0d8d3;color:black;padding:2px 15px;margin: 0 0 ;width: 100%"
+             > {{itemCounter}} items  </button>
+
+          <button (click)="increasCart()" mat-button
+          style="font-size: 14px;background:#1a8a29;color:white;padding:2px 15px;margin: 0 0 "
+             > + </button>
+            </div>
+            </div>
+      </div>
+  </div>
+</div>

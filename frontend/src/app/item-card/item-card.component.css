@@ -1,0 +1,50 @@
+
+
+.card {
+  width: 260px;
+  display: flex;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 2px solid rgb(201, 204, 204);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.image {
+  width: 250px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-size: cover
+}
+.title-text {
+  font-size: 18px;
+  color: #424242;
+  padding-top: 5px;
+  height: 32px;
+  overflow: hidden;
+}
+.date-and-view-text {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  color: gray
+}
+.title-text-div{
+    position: relative;
+  overflow: hidden;
+  display: flex;
+}
+.add-to-cart-button{
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+
+
+

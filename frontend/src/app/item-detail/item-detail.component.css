@@ -1,0 +1,69 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #CFD8DC;
+}
+
+.item-container{
+  width:50%;
+  background: white;
+  margin: 20px 20px;
+  margin-bottom: 200px;
+  padding: 20px;
+
+  border: 3px solid rgb(201, 204, 204);
+}
+
+.image-card {
+  display: flex;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+
+  background:white;
+}
+
+.image {
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-size: cover
+}
+
+
+.title-text {
+  font-size: 15px;
+
+  color: #424242;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: auto;
+  overflow: hidden;
+}
+
+.date-and-view-text {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  color: gray
+}
+
+
+.title-text-div{
+    position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+
+/* end */
+
+
+.add-to-cart-button{
+
+  display: flex;
+  flex-direction: row;
+}
+

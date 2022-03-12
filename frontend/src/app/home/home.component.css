@@ -1,0 +1,33 @@
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #CFD8DC;
+  padding: 0  50px;
+}.contener {
+  width: 100%;
+  padding: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #CFD8DC;
+}
+.sidenav-container{
+  widows: 100%;
+  min-height:600px;
+}
+.item-contener{
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0px 10px 15px 10px;
+}
+a{
+  text-decoration: none;
+}

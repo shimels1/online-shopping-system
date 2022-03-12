@@ -1,0 +1,28 @@
+<section class="container">
+
+  <div class="checkout-card">
+      <form fxLayout="column" fxLayoutGap="10px"
+      fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="sendOrder(f)">
+
+          <h3>Check Out</h3>
+          <h4 *ngIf="error$!=''" style="color:red">{{error$}}</h4>
+
+          <mat-form-field>
+            <input type="text" minlength='3' matInput placeholder="address"
+            ngModel name="address" required #address="ngModel">
+            <mat-error *ngIf="!address.value">address required. </mat-error>
+            <mat-error *ngIf="address.value && !address.valid">address length should be > 3. </mat-error>
+        </mat-form-field>
+
+          <mat-form-field>
+              <input type="number" matInput placeholder="phone"  ngModel name="phone" required #phone="ngModel">
+              <mat-error *ngIf="!phone.value">phone required. </mat-error>
+              <mat-error *ngIf="!phone.valid && phone.value">phone is not valid. </mat-error>
+          </mat-form-field>
+
+
+          <button type="submit" mat-raised-button color="primary"
+          [disabled]="!f.valid">Send To Shop</button>
+      </form>
+  </div>
+</section>

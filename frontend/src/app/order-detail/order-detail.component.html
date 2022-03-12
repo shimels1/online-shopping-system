@@ -1,0 +1,30 @@
+
+<div class="container">
+
+  <div class="table" *ngIf="order.length > 0">
+  <div class="title">
+    <h3>Item Detail List</h3>
+  </div>
+  <table>
+
+    <tr>
+      <th>No</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  <tr *ngFor="let i  of order;index as ii">
+    <td>{{ii+1}}</td>
+    <td>{{i.title}}</td>
+    <td>{{i.price}}</td>
+    <td>{{i.quantity}}</td>
+  </tr>
+  </table>
+  <br>
+  <button mat-button style="background: green;color:white"
+    [routerLink]="['/order']"> Back to orders</button>
+
+</div>
+
+
+</div>

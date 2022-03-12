@@ -1,0 +1,24 @@
+<mat-toolbar class="toolbar" >
+
+  <div>
+    <a   >SHEGER SHOP</a>&nbsp;&nbsp;
+    <a   *ngIf="authService.getRole()!=='admin'"  [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>&nbsp;&nbsp;
+  </div>
+
+<div class="menu-right" fxLayoutAlign="end">
+  <a   *ngIf="authService.getRole()==='customer'"  [routerLink]="['/order']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Orders</a>&nbsp;&nbsp;
+  <a   *ngIf="authService.getRole()==='admin'"  [routerLink]="['/adduser']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Add User</a>&nbsp;&nbsp;
+          <a   *ngIf="authService.getRole()==='customer'" [routerLink]="['/cart']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Cart({{ cartServic.countCart()}})</a>&nbsp;&nbsp;
+          <a   *ngIf="authService.getRole()==='clerk'"
+          [routerLink]="['/customerOrder']" routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact:true}">Order</a>&nbsp;&nbsp;
+            <a   *ngIf="authService.getRole()==='clerk'"
+           [routerLink]="['/customerAcceptedOrder']" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">Accepted Order</a>&nbsp;&nbsp;
+
+          <a  *ngIf="!authService.isLogedIn()"  [routerLink]="['/signup']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign up</a>&nbsp;&nbsp;
+          <a  *ngIf="!authService.isLogedIn()"  [routerLink]="['/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</a>&nbsp;&nbsp;
+          <a  *ngIf="authService.isLogedIn()">hello {{authService.getUser().fname}}</a>&nbsp;&nbsp;
+          <a  *ngIf="authService.isLogedIn()"  [routerLink]="['/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="logout()" >Logout</a>
+        </div>
+</mat-toolbar>

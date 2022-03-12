@@ -1,0 +1,48 @@
+
+<div class="container">
+
+  <div class="table" *ngIf="orderDetail.length > 0">
+  <div class="title">
+    <h3>Item Detail List</h3>
+  </div>
+  <table>
+
+    <tr>
+      <th>No</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  <tr *ngFor="let i  of orderDetail;index as ii">
+    <td>{{ii}}</td>
+    <td>{{i.title}}</td>
+    <td>{{i.price}}</td>
+    <td>{{i.quantity}}</td>
+  </tr>
+  </table>
+
+  <div class="userDetail" >
+    <div class="title">
+      <h3>User Address</h3>
+    </div>
+  <table>
+
+    <tr>
+      <th>User name</th>
+      <th>Current Phone</th>
+      <th>Address</th>
+    </tr>
+  <tr >
+    <td>{{user.fname}}&nbsp;&nbsp;&nbsp;{{user.lname}}</td>
+    <td>{{order.phone}}</td>
+    <td>{{order.address}}</td>
+  </tr>
+  </table>
+  </div>
+<br>
+  <button mat-button style="background: green;color:white"
+  [routerLink]="['/customerOrder']"> Back to requests</button>
+</div>
+
+
+</div>

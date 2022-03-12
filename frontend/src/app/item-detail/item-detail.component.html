@@ -1,0 +1,52 @@
+
+  <div fxLayout="row" class="container">
+
+      <div class="item-container" style="margin:10px;margin-bottom: 50px;">
+
+        <div fxLayout="column" [class.mat-elevation-z0]="true" class="image-card" fxLayoutGap="5px">
+
+        <!-- <img class="image" src="assets/aboutus.png"> -->
+
+  <img class="image" [src]="'assets/'+item.imageURL"  >
+
+        <div class="title-text-div" fxLayout="column">
+
+        <span class="title-text"  matTooltipClass="tooltip">
+          <H2>        {{ item.title }}</H2>
+          <P>{{ item.discription }}</P>
+           <P>Road traffic density estimation provides important information for road planning, intelligent road routing, road traffic control, vehicular network traffic scheduling, routing and dissemination. The existing solutions for traffic density estimation as Doppler radar, infrared, and inductive loop-based sensors have limitations due to complexity, human effort, maintenance, portability, and monetary cost. This paper proposed a real-time android application for traffic density estimation that is cost effective, quick to deploy, and easy to adapt. In order to automatically estimates the density of vehicles image/video processing-based algorithms has been developed</P>
+        </span>
+        <span class="date-and-view-text">
+
+            <span>
+                Quantity : {{ item.quantity }}
+                </span> &nbsp;<span><br><br>
+                    Posted date: {{ item.date }}
+                    <!--  {{ data.date | date }} -->
+                    </span> &nbsp;
+        </span>
+        <a  mat-button  [style.display]="(!isItemSelected && authServise.getRole()==='customer') ? 'block' : 'none'"
+        (click)="addToCart()"
+        style="font-size: 14px;background:#1a8a29;color:white;padding:2px 15px;"   > ADD TO CART  </a>
+
+        <div [style.display]="(isItemSelected && authServise.getRole()==='customer') ? 'block' : 'none'" >
+        <div class="add-to-cart-button">
+
+          <button  (click)="dicreasCart()" mat-button
+          style="font-size: 14px;background:#1a8a29;color:white;padding:2px 15px;margin: 0 0 "   > - </button>
+
+          <button mat-button
+          style="font-size: 16px;background:#d0d8d3;color:black;padding:2px 15px;margin: 0 0 ;width: 100%"
+             > {{itemCounter}} items  </button>
+
+          <button (click)="increasCart()" mat-button
+          style="font-size: 14px;background:#1a8a29;color:white;padding:2px 15px;margin: 0 0 "
+             > + </button>
+        </div>
+        </div>
+         <button [style.display]="(!authServise.isLogedIn()) ? 'block' : 'none'" mat-raised-button color="primary" [routerLink]="'/login'">login to shop</button>
+        </div>
+        </div>
+       </div>
+
+</div>

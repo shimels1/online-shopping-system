@@ -1,0 +1,27 @@
+
+.cart-container{
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #CFD8DC;
+}
+.table{
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  border-radius: 1%;
+  border: 3px solid rgb(201, 204, 204);
+}
+
+table th,td{
+  padding:10px 20px;
+  border: 1px solid gray
+}
+table {
+  border: 1px solid gray
+}

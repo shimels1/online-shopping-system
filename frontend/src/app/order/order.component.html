@@ -1,0 +1,36 @@
+<div class="cart-container">
+
+  <div class="table" *ngIf="order.length > 0">
+    <h3>Your orders</h3>
+    <div class="row">
+      <h3>No</h3>
+      <h3>Items</h3>
+      <h3>Date</h3>
+      <h3>Action</h3>
+    </div>
+    <div  class="row" *ngFor="let item of order; index as ii" >
+      <span>{{  ii+1}}</span>
+      <span>{{ item.item }} &nbsp;&nbsp;&nbsp; Items</span>
+      <span>{{ Date || item.date}} </span>
+      <span>
+        <button mat-button style="background: rgb(32, 51, 161);color:white"
+        [routerLink]="['/orderDetail']" [queryParams]="{id:item.orderID}"> View</button>
+        &nbsp;&nbsp;&nbsp;
+        <button  mat-button *ngIf="item.respond=='true'"
+        style="background: green;color:white" >Accepted</button>
+          &nbsp;&nbsp;&nbsp;
+          <button mat-button *ngIf="item.respond!=='true'" (click)="cancelOrder(item.orderID)"
+           style="background: rgb(196, 32, 59);color:white"  >
+            cancel</button>
+
+            </span>
+ </div>
+
+      <div style="display:flex;width:100%;justify-content:flex-end;margin-top:10px;border-top:
+       1px solid #c8d1d1;">
+
+
+  </div>
+</div>
+
+<br>
